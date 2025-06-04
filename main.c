@@ -105,30 +105,82 @@ int main()
     printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
     printf("O Superpoder é de:%.2f \n\n", superPoder2);
 
-    // VARIAVEIS DE COMPARAÇÃO DE ATRIBUTOS DA CARTA 1 E 2
-    long int populacao_comparacao1, area_comparacao1, pib_comparacao1, pontos_turisticos_comparacao1, densidade_comparacao1, pib_per_capita_comparacao1, superpoder_comparacao1;
+    //ESTRUTURAS PARA COMPARAÇÃO DE PONTOS
+    int pontos_carta1 = 0;// CONTADOR CARTA 1
+    int pontos_carta2 = 0;//CONTADOR CARTA 2
+    //
+    if (populacao1 > populacao2)
+    {
+        pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em população por: %ld \n",populacao1);
+    }else{
+        pontos_carta1 ++;
+        printf("Carta - 2 Ganhou em população por: %ld \n",populacao2);
+    }
+    //
+    if (area1 > area2)
+    {
+        pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em área por: %f \n",area1);
+    } else{
+        pontos_carta2 ++;
+        printf("Carta - 2 Ganhou em área por: %f \n", area2);
+    }
+    //
+    if (pib1 > pib2)
+    {
+        pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em PIB por: %f \n",pib1);
 
-    // PONTOS SOBRE ATRIBUTOS DA CARTA 1
-    populacao_comparacao1 = populacao1 <= populacao2;
-    printf("\nCARTA 1\n Populacao pontos: %d \n", populacao_comparacao1);
-
-    area_comparacao1 = area1 >= area2;
-    printf("area pontos: %d \n", area_comparacao1);
-
-    pib_comparacao1 = pib1 >= pib2;
-    printf("PIB pontos: %d \n", pib_comparacao1);
-
-    pontos_turisticos_comparacao1 = n_pontos_turisticos1 >= n_pontos_turisticos2;
-    printf("Pontos Turisticos pontos: %d \n", pontos_turisticos_comparacao1);
-
-    densidade_comparacao1 = densidade1 >= densidade2;
-    printf("Densidade pontos: %d \n", densidade_comparacao1);
-
-    pib_per_capita_comparacao1 = pib_per_capita1 >= pib_per_capita2;
-    printf("PIB per capita pontos: %d \n", pib_per_capita_comparacao1);
-
-    superpoder_comparacao1 = superPoder1 >= superPoder2;
-    printf("SuperPoder pontos: %d \n", superpoder_comparacao1);
-
+    }else{
+        pontos_carta2 ++;
+        printf("Carta - 2 Ganhou em PIB por: %f \n", pib2);
+    }
+    //
+    if (n_pontos_turisticos1 > n_pontos_turisticos2)
+    {
+      pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em Pontos turisticos por: %d \n",n_pontos_turisticos1);
+    }else{
+        pontos_carta2 ++;
+        printf("Carta - 2 Ganhou em Pontos turisticos por: %d \n",n_pontos_turisticos2);
+    }
+    //
+    if (densidade1 < densidade2)
+    {
+        pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em Densidade por: %f \n",densidade1);
+    }else{
+        pontos_carta2 ++;
+        printf("Carta - 2 Ganhou em Densidade por: %f \n",densidade2);
+    }
+    //
+    if (pib_per_capita1 > pib_per_capita2)
+    {
+        pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em PIB per capita por: %f \n",pib_per_capita1);
+    }else{
+        pontos_carta2 ++;
+        printf("Carta - 2 Ganhou em PIB per capita por: %f \n",pib_per_capita2);
+    }
+    //
+    if (superPoder1 > superPoder2)
+    {
+        pontos_carta1 ++;
+        printf("Carta - 1 Ganhou em SuperPoder por: %f \n",superPoder1);
+    }else{
+        pontos_carta1 ++;
+        printf("Carta - 2 Ganhou em SuperPoder por: %f \n",superPoder2);
+    }
+    
+    // COMPARAR RESULTADO FINAL DOS PONTOS
+    if (pontos_carta1 > pontos_carta2)
+    {
+        printf("Carta - 1 %s Venceu por: %d pontos \n",nome_cidade1 ,pontos_carta1);
+    }else{
+        pontos_carta1 ++;
+        printf("Carta - 2 %s Venceu por: %d pontos \n",nome_cidade1 ,pontos_carta2);
+    }
+    
     return 0;
 }
